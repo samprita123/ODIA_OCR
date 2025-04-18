@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Odia OCR</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/semantic-ui-css@2.2.12/semantic.min.css'>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="ui container">
+    <h1 class="ui header center aligned">Odia Text Reader</h1>
+    <div class="desc">Tesseract OCR EngineV5.0 is Used to Extract all odia text from selected image.</div>
+
+    <div class="ui grid stackable">
+      <div class="row">
+
+        <div class="eight wide column">
+          <div class="ui card">
+            <div class="content">
+              <h2 class="header center aligned">Input Image</h2>
+            </div>
+            <div class="content">
+              <img id="image" class="ui centered medium image" src="./odia.png" />
+            </div>
+            <div class="content extra">
+              <input id="file" type="file" accept="image/*" onchange="proccess(window.lastFile=this.files[0])">
+              <label for="file" id="file-label">Choose a file</label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="eight wide column">
+          <div class="ui card">
+            <div class="content">
+              <h2 class="header center aligned">Output Text</h2>
+            </div>
+
+            <div class="content content-result">
+              <div class="buffer-overlay">
+                <div class="buffer-container">
+                  <div class="buffer-animation"></div>
+                </div>
+              </div>
+              <div class='ui grid'>
+                <div class='result'>
+                  <div class="column placeholder">
+                    No Output <br />
+                    <span>Choose a file to start</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div class="content extra">
+              <button type="button" id='speakOdia' class="button" onclick="play_tts()">Odia 🔊</button>
+              <button type="button" id='speakEnglish' class="button" onclick="play_eng()">English 🔊</button>
+            </div>
+            <div class="content extra">
+              <small>Developed by <a href="https://askthedanish.vercel.app">@Danish</a></small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <audio id="player" style="visibility: hidden;"></audio>
+  <!-- partial -->
+  <!-- v5 -->
+  <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
+  <!-- <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script> -->
+  <!-- <script src="./tesseract.js"></script> -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/semantic-ui-css@2.2.12/semantic.min.js'></script>
+
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
